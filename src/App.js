@@ -5,13 +5,18 @@ import './App.css';
 class InputOutputText extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { inputTxt: '' };
+    this.state = { 
+      inputTxt: '',
+      uppercase: '',
+      backwards: '' 
+    };
 
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
     this.setState({inputTxt: event.target.value});
+    this.setState({uppercase: event.target.value.toUpperCase()});
   }
 
   render() {
@@ -25,6 +30,8 @@ class InputOutputText extends React.Component {
           </div>
 
           <div className="col-6">
+          {this.state.uppercase} 
+          <br />
           {this.state.inputTxt}
           </div>
         </div>
