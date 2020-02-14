@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class InputOutputText extends React.Component {
@@ -16,6 +15,9 @@ class InputOutputText extends React.Component {
 
   handleChange(event) {
     this.setState({inputTxt: event.target.value});
+    // setting state backwards
+    this.setState({backwards: event.target.value.split("").reverse().join("")});
+    //setting uppercase
     this.setState({uppercase: event.target.value.toUpperCase()});
   }
 
@@ -25,17 +27,19 @@ class InputOutputText extends React.Component {
         <div className="row">
 
           <div className="col-6">
-            hey <br />
+            Type something:<br />
             <input type="text" value={this.state.inputTxt} onChange={this.handleChange} />
           </div>
 
           <div className="col-6">
-          {this.state.uppercase} 
-          <br />
-          {this.state.inputTxt}
+            {this.state.backwards}
+            <br />
+            {this.state.uppercase} 
+            <br />
+            <biggerfont> {this.state.inputTxt} </biggerfont>
           </div>
+        
         </div>
-
       </div>
     );
   }
