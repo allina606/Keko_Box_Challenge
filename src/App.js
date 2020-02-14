@@ -23,20 +23,23 @@ class InputOutputText extends React.Component {
 
   render() {
     return (
-      <div className="container-fluid">
+      <div id="homepage" className="container-fluid">
         <div className="row">
 
           <div className="col-6">
-            Type something:<br />
+            Type Something:<br />
             <input type="text" value={this.state.inputTxt} onChange={this.handleChange} />
           </div>
 
           <div className="col-6">
-            {this.state.backwards}
-            <br />
-            {this.state.uppercase} 
-            <br />
-            <biggerfont> {this.state.inputTxt} </biggerfont>
+            <div className="card">
+              <div className="card-header">Manipulated State: </div>
+              <ul className="list-group list-group-flush">
+                <li className="list-group-item"> {this.state.backwards} </li>
+                <li className="list-group-item"> {this.state.uppercase} </li>
+                <li className="list-group-item biggerfont"> {this.state.inputTxt} </li>
+              </ul>
+            </div>
           </div>
         
         </div>

@@ -1,3 +1,17 @@
-biggerfont {
+#homepage {
+  padding: 5%;
+  text-align: center;
+}
+
+#homepage .biggerfont {
   font-size: 30px;
+}
+
+#homepage div.card {
+  width: 18rem;
+  padding: 2px;
+}
+
+#homepage li {
+  min-height: 4rem;
 }
