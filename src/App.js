@@ -2,25 +2,36 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class InputOutputText extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { inputTxt: '' };
+
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({inputTxt: event.target.value});
+  }
+
+  render() {
+    return (
+      <div className="container-fluid">
+        <div className="row">
+
+          <div className="col-6">
+            hey <br />
+            <input type="text" value={this.state.inputTxt} onChange={this.handleChange} />
+          </div>
+
+          <div className="col-6">
+          {this.state.inputTxt}
+          </div>
+        </div>
+
+      </div>
+    );
+  }
 }
 
-export default App;
+export default InputOutputText;
